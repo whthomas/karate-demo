@@ -21,3 +21,10 @@ Feature: karate 'hello world' example
     When method get
     Then status 200
     Then print response
+
+  Scenario: 发送一个Json数据
+    Given path '/person'
+    And request { name: '张三' }
+    When method post
+    Then status 200
+    Then print response
